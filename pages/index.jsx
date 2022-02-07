@@ -3,9 +3,7 @@ import AddEntryContext from "../components/context/Add-entryContext"
 import Layout from "../components/Layout"
 
 const Index = () => {
-  const {
-    state: { entries },
-  } = useContext(AddEntryContext)
+  const { state: savedInitialValues } = useContext(AddEntryContext)
 
   return (
     <Layout props="Dashboard">
@@ -31,18 +29,20 @@ const Index = () => {
                   </tr>
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
-                  {Object.entries(entries).map(([{ amount, description }]) => (
-                    <tr key="{entriesId}">
-                      <td className="text-lg px-6 py-4 whitespace-nowrap text-right text-green-600 ">
-                        {amount}
-                        <h1 className="text-gray-600">{description}</h1>
-                      </td>
-                      <td className="text-lg px-6 py-4 whitespace-nowrap text-right text-red-600">
-                        {amount}
-                        <h1 className="text-gray-600">{description}</h1>
-                      </td>
-                    </tr>
-                  ))}
+                  {Object.entries(savedInitialValues.entries).map(
+                    ([{ amount, description }]) => (
+                      <tr key="{entriesId}">
+                        <td className="text-lg px-6 py-4 whitespace-nowrap text-right text-green-600 ">
+                          {amount}
+                          <h1 className="text-gray-600">{description}</h1>
+                        </td>
+                        <td className="text-lg px-6 py-4 whitespace-nowrap text-right text-red-600">
+                          {amount}
+                          <h1 className="text-gray-600">{description}</h1>
+                        </td>
+                      </tr>
+                    )
+                  )}
                 </tbody>
                 <thead className="bg-gray-50">
                   <tr>

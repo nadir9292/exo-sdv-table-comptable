@@ -43,18 +43,18 @@ const AddEntry = () => {
               >
                 Description
               </FormField>
-              {/* <Link href="/" passHref>
-                <a> */}
-              <Button
-                type="submit"
-                disabled={!isValid || isSubmitting}
-                variant="btnValidation"
-                size="lg"
-              >
-                ADD NEW ENTRY
-              </Button>
-              {/* </a>
-              </Link> */}
+              <Link href="/" passHref>
+                <a>
+                  <Button
+                    type="submit"
+                    disabled={!isValid || isSubmitting}
+                    variant="btnValidation"
+                    size="lg"
+                  >
+                    ADD NEW ENTRY
+                  </Button>
+                </a>
+              </Link>
             </form>
           )}
         </Formik>

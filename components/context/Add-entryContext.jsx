@@ -16,7 +16,7 @@ const initialValues = {
 }
 
 const savedInitialValues = {
-  savedEntries: [],
+  savedEntries: [initialValues.entries],
 }
 
 export const AddEntryProvider = (props) => {
